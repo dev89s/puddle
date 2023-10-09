@@ -23,7 +23,8 @@ def new(request):
       item = form.save(commit=False)
       item.created_by = request.user
       item.save()
-  form = NewItemForm()
+  else:
+    form = NewItemForm()
 
   return render (request, 'item/form.html', {
     'form': form,
